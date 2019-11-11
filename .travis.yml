@@ -1,0 +1,19 @@
+language: python
+
+python:
+ - 3.6
+ - 3.5
+ - 3.7
+
+before_install:
+ - wget https://www4.stat.ncsu.edu/~boos/var.select/diabetes.rwrite1.txt
+ - mv diabetes.rwrite1.txt diabetes.data
+
+script:
+ - python3 an0_exploratory.py --help
+ - python3 an0_exploratory.py -p alc hue class
+ - python3 an0_exploratory.py -p ash pac class
+ - python3 an1_health.py
+ - python3 an2_colour.py
+ - python3 an3_phenols.py
+ 
